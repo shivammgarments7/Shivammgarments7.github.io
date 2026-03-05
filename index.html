@@ -1,90 +1,1341 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>SHIVAMM GARMENTS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {margin:0; font-family:Arial;}
-header {background:#0d2b45; color:white; text-align:center; padding:20px;}
-nav {background:#163d5c; text-align:center; padding:10px;}
-nav a {color:white; margin:10px; text-decoration:none; font-weight:bold;}
-.section {padding:40px; text-align:center;}
-.button {
-  display:inline-block;
-  padding:10px 20px;
-  background:#0d2b45;
-  color:white;
-  text-decoration:none;
-  border-radius:5px;
-  margin:10px;
-}
-.button:hover {background:#1b4f72;}
-footer {background:#0d2b45; color:white; text-align:center; padding:15px;}
-iframe {width:100%; height:300px; border:0;}
-img {max-width:100%;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVAMM GARMENTS - Wholesale Women's Fashion Since 2001</title>
+    <meta name="description" content="SHIVAMM GARMENTS - Leading wholesale manufacturer of women's clothing. High-quality fabrics, latest fashion styles, all India delivery. Wholesale only since 2001.">
+    <meta name="keywords" content="wholesale women's clothing, women's garments manufacturer, wholesale fashion, Surat textile market, SHIVAMM GARMENTS">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #D4508F;
+            --secondary-color: #8B2C5C;
+            --accent-color: #F8B5D4;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --light-bg: #FFF5F9;
+            --gradient: linear-gradient(135deg, #D4508F 0%, #8B2C5C 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #FFF5F9 0%, #FFE5F1 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .wholesale-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 5px 20px rgba(212, 80, 143, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 80, 143, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 500px;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 20px 60px rgba(212, 80, 143, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 80, 143, 0.2);
+        }
+
+        .about-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .about-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Catalog Section */
+        .catalog {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .catalog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 80, 143, 0.2);
+        }
+
+        .catalog-preview {
+            height: 250px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog-preview i {
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+
+        .catalog-info {
+            padding: 1.5rem;
+        }
+
+        .catalog-info h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+        }
+
+        .catalog-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .catalog-buttons button {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .view-pdf {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .view-pdf:hover {
+            background: var(--secondary-color);
+        }
+
+        .download-pdf {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .download-pdf:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Social Media Section */
+        .social {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .social-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-bg);
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-10px) rotate(360deg);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 0.3rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3); }
+            50% { box-shadow: 0 5px 30px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        /* PDF Viewer Modal */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pdf-modal-content {
+            background: white;
+            width: 90%;
+            height: 90%;
+            max-width: 1000px;
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .pdf-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-modal-close:hover {
+            background: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: calc(100% - 60px);
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">SHIVAMM GARMENTS</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<header>
-<img src="logo.png" width="120">
-<h1>SHIVAMM GARMENTS</h1>
-<p>Manufacturer & Wholesale Only</p>
-</header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right">
+                <div class="wholesale-badge">WHOLESALE ONLY - NO RETAIL</div>
+                <h1>SHIVAMM GARMENTS</h1>
+                <p class="tagline">Wholesale Women's Fashion Since 2001</p>
+                <p style="color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Leading manufacturer and wholesale supplier of premium women's clothing. 
+                    Trusted by retailers across India for quality, style, and reliability.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-primary">
+                        <i class="fas fa-book"></i> View Catalog
+                    </a>
+                    <a href="https://wa.me/917016666058" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <div class="hero-image-placeholder">
+                    <div style="text-align: center;">
+                        <i class="fas fa-tshirt" style="font-size: 5rem;"></i>
+                        <p>Your Banner Here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<nav>
-<a href="#about">About</a>
-<a href="#catalogue">Catalogue</a>
-<a href="#contact">Contact</a>
-</nav>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2 class="section-title" data-aos="fade-up">About Us</h2>
+            <div class="about-grid">
+                <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-industry"></i>
+                    <h3>Manufacturer</h3>
+                    <p>We are a leading women's clothing manufacturer with state-of-the-art production facilities.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-store"></i>
+                    <h3>Wholesale Only</h3>
+                    <p>We deal exclusively in wholesale, providing bulk orders to retailers across the country.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-truck"></i>
+                    <h3>All India Delivery</h3>
+                    <p>Fast and reliable delivery service covering all major cities and towns across India.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-sparkles"></i>
+                    <h3>Daily New Designs</h3>
+                    <p>Fresh, trendy designs added daily to keep your inventory current with latest fashion.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-gem"></i>
+                    <h3>Quality Fabrics</h3>
+                    <p>Premium quality fabrics sourced from trusted suppliers ensuring comfort and durability.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-award"></i>
+                    <h3>Trusted Since 2001</h3>
+                    <p>Over 20 years of excellence in wholesale fashion, serving thousands of satisfied retailers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="section">
-<img src="banner.jpg">
-<br><br>
-<a class="button" href="https://wa.me/917016666058" target="_blank">
-Wholesale Enquiry on WhatsApp
-</a>
-</div>
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog">
+        <div class="catalog-container">
+            <h2 class="section-title" data-aos="fade-up">Our Catalogs</h2>
+            <div class="catalog-grid">
+                <div class="catalog-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="catalog-preview">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Kurti Collection 2024</h3>
+                        <div class="catalog-buttons">
+                            <button class="view-pdf" onclick="openPDF('catalog1.pdf')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="download-pdf" onclick="downloadPDF('catalog1.pdf')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<div id="about" class="section">
-<h2>About Us</h2>
-<p>
-SHIVAMM GARMENTS is a Surat-based women’s clothing manufacturer 
-and wholesale supplier. We deal strictly in wholesale orders only.
-</p>
-</div>
+                <div class="catalog-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="catalog-preview">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Saree Collection</h3>
+                        <div class="catalog-buttons">
+                            <button class="view-pdf" onclick="openPDF('catalog2.pdf')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="download-pdf" onclick="downloadPDF('catalog2.pdf')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<div id="catalogue" class="section">
-<h2>Our Catalogue</h2>
-<a class="button" href="catalogue1.pdf" target="_blank">Catalogue 1</a>
-<a class="button" href="catalogue2.pdf" target="_blank">Catalogue 2</a>
-<a class="button" href="catalogue3.pdf" target="_blank">Catalogue 3</a>
-<a class="button" href="catalogue4.pdf" target="_blank">Catalogue 4</a>
-<a class="button" href="catalogue5.pdf" target="_blank">Catalogue 5</a>
-<a class="button" href="catalogue6.pdf" target="_blank">Catalogue 6</a>
-<a class="button" href="catalogue7.pdf" target="_blank">Catalogue 7</a>
-</div>
+                <div class="catalog-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="catalog-preview">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Western Wear</h3>
+                        <div class="catalog-buttons">
+                            <button class="view-pdf" onclick="openPDF('catalog3.pdf')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="download-pdf" onclick="downloadPDF('catalog3.pdf')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<div id="contact" class="section">
-<h2>Contact Us</h2>
-<p><b>Address:</b><br>
-B-144 Global Textile Market, Surat, Gujarat</p>
+                <div class="catalog-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="catalog-preview">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Ethnic Collection</h3>
+                        <div class="catalog-buttons">
+                            <button class="view-pdf" onclick="openPDF('catalog4.pdf')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="download-pdf" onclick="downloadPDF('catalog4.pdf')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<a class="button" href="https://www.instagram.com/shivamm_garments_since_2001" target="_blank">Instagram</a>
+                <div class="catalog-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="catalog-preview">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Party Wear</h3>
+                        <div class="catalog-buttons">
+                            <button class="view-pdf" onclick="openPDF('catalog5.pdf')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="download-pdf" onclick="downloadPDF('catalog5.pdf')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<a class="button" href="https://youtube.com/@shivammgarments" target="_blank">YouTube</a>
+                <div class="catalog-card" data-aos="flip-left" data-aos-delay="600">
+                    <div class="catalog-preview">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Summer Collection</h3>
+                        <div class="catalog-buttons">
+                            <button class="view-pdf" onclick="openPDF('catalog6.pdf')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="download-pdf" onclick="downloadPDF('catalog6.pdf')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<a class="button" href="https://wa.me/917016666058" target="_blank">WhatsApp</a>
+    <!-- Social Media Section -->
+    <section id="social" class="social">
+        <div class="social-container">
+            <h2 class="section-title" data-aos="fade-up">Connect With Us</h2>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: var(--text-light); font-size: 1.1rem;">
+                Follow us on social media for daily updates on new arrivals and exclusive wholesale deals
+            </p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/shivamm_garments_since_2001?igsh=NnZoZnl5dTg1OWhr&utm_source=qr" 
+                   target="_blank" 
+                   class="social-link" 
+                   data-aos="zoom-in" 
+                   data-aos-delay="200">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@shivammgarments?si=zg6pPmepS63f5ZnZ" 
+                   target="_blank" 
+                   class="social-link" 
+                   data-aos="zoom-in" 
+                   data-aos-delay="300">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/917016666058" 
+                   target="_blank" 
+                   class="social-link" 
+                   data-aos="zoom-in" 
+                   data-aos-delay="400">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<h3>Location</h3>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+91 70166 66058</p>
+                            <a href="https://wa.me/917016666058" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                                <i class="fab fa-whatsapp"></i> Chat Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Visit Our Showroom</h3>
+                            <p>B-144 Global Textile Market<br>
+                               Ring Road, Surat<br>
+                               Gujarat - 395002</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>
+                               Sunday: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.9659506!2d72.8807!3d21.2335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s21.2335%2C72.8807!5e0!3m2!1sen!2sin!4v1234567890" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<iframe src="https://www.google.com/maps?q=B-144+Global+Textile+Market+Surat+Gujarat&output=embed"></iframe>
-</div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SHIVAMM GARMENTS</h3>
+                    <p>Your Trusted Partner in Wholesale Fashion</p>
+                    <p>Since 2001</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Business Type</h3>
+                    <p>✓ Wholesale Only</p>
+                    <p>✓ No Retail Sales</p>
+                    <p>✓ Minimum Order Apply</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p>✓ All India Delivery</p>
+                    <p>✓ Daily New Designs</p>
+                    <p>✓ Premium Quality</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/shivamm_garments_since_2001?igsh=NnZoZnl5dTg1OWhr&utm_source=qr" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@shivammgarments?si=zg6pPmepS63f5ZnZ" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/917016666058" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SHIVAMM GARMENTS. All Rights Reserved. | Wholesale Fashion Since 2001</p>
+            </div>
+        </div>
+    </footer>
 
-<footer>
-© 2026 SHIVAMM GARMENTS | Wholesale Only
-</footer>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/917016666058" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <!-- PDF Viewer Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <button class="pdf-modal-close" onclick="closePDF()">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe id="pdfFrame" class="pdf-frame"></iframe>
+        </div>
+    </div>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Animate hamburger
+            const spans = hamburger.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // PDF Functions
+        function openPDF(filename) {
+            const modal = document.getElementById('pdfModal');
+            const frame = document.getElementById('pdfFrame');
+            
+            // In production, replace this with actual PDF path
+            // For demo, showing a placeholder message
+            frame.src = `path/to/your/pdfs/${filename}`;
+            modal.style.display = 'flex';
+            
+            // Show placeholder if PDF not found
+            frame.onerror = function() {
+                frame.src = 'about:blank';
+                frame.contentDocument.body.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100vh; font-family: Arial;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-file-pdf" style="font-size: 5rem; color: #D4508F;"></i>
+                            <h2>PDF Catalog</h2>
+                            <p>Upload your PDF catalog here: ${filename}</p>
+                        </div>
+                    </div>
+                `;
+            };
+        }
+
+        function closePDF() {
+            const modal = document.getElementById('pdfModal');
+            const frame = document.getElementById('pdfFrame');
+            modal.style.display = 'none';
+            frame.src = '';
+        }
+
+        function downloadPDF(filename) {
+            // In production, replace this with actual PDF download link
+            const link = document.createElement('a');
+            link.href = `path/to/your/pdfs/${filename}`;
+            link.download = filename;
+            link.click();
+            
+            // For demo, show alert
+            alert(`Download ${filename}\n\nIn production, this will download the actual PDF file.`);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('pdfModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePDF();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.href && this.href.includes('#')) return; // Skip for anchor links
+                
+                const originalContent = this.innerHTML;
+                this.innerHTML = '<span class="loading"></span> Loading...';
+                
+                setTimeout(() => {
+                    this.innerHTML = originalContent;
+                }, 1000);
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Counter animation for statistics
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            const updateCounter = () => {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.ceil(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            };
+            
+            updateCounter();
+        }
+
+        // Add hover effect to catalog cards
+        document.querySelectorAll('.catalog-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Lazy loading for images (when you add real images)
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        // Apply to all images with data-src attribute
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+
+        // Form validation (if you add a contact form later)
+        function validateForm(form) {
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+            });
+            
+            return isValid;
+        }
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('.btn, button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add testimonials slider (if you want to add testimonials section later)
+        class Slider {
+            constructor(element) {
+                this.element = element;
+                this.slides = element.querySelectorAll('.slide');
+                this.currentSlide = 0;
+                this.init();
+            }
+            
+            init() {
+                setInterval(() => this.next(), 5000);
+            }
+            
+            next() {
+                this.slides[this.currentSlide].classList.remove('active');
+                this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+                this.slides[this.currentSlide].classList.add('active');
+            }
+        }
+
+        // Initialize slider if testimonials section exists
+        const testimonialSlider = document.querySelector('.testimonial-slider');
+        if (testimonialSlider) {
+            new Slider(testimonialSlider);
+        }
+
+        // Add scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            if (scrollProgress) {
+                const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                scrollProgress.style.width = scrollPercentage + '%';
+            }
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            
+            // Animate hero content
+            setTimeout(() => {
+                document.querySelector('.hero-content').style.opacity = '1';
+                document.querySelector('.hero-content').style.transform = 'translateY(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                document.querySelector('.hero-image').style.opacity = '1';
+                document.querySelector('.hero-image').style.transform = 'translateY(0)';
+            }, 300);
+        });
+
+        // Console message
+        console.log('%c SHIVAMM GARMENTS', 'font-size: 24px; font-weight: bold; color: #D4508F;');
+        console.log('%c Wholesale Women\'s Fashion Since 2001', 'font-size: 14px; color: #666;');
+        console.log('%c Website developed with ❤️', 'font-size: 12px; color: #999;');
+    </script>
 </body>
 </html>
